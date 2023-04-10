@@ -1,0 +1,67 @@
+étape 1 : on a éssayer avec mots, etc...
+étape 2: uniquement phrases
+
+
+EMNIST : que des lettres,  peux insiter à uniquement reconnaitre des lettres, pas des mots, donc pas forcément bien
+DDI-100 -> voir si ça peut s'appliquer à juste des mots
+RoadText1K -> Pas mal mais pas manuscrit donc ne pas trop en abuser
+MSRA-TD500 -> contiens des chractères asiatiques, uniquement 500 images, format de fichier vieux (.gt), voir si pas trop compliqué à mettre en place
+NEOCR: Natural Environment OCR Dataset -> http://www.iapr-tc11.org/mediawiki/index.php?title=NEOCR:_Natural_Environment_OCR_Dataset
+
+
+mjsynth dataset : https://www.robots.ox.ac.uk/~vgg/data/text/
+The Chars74K dataset : http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/
+http://www.iapr-tc11.org/mediawiki/index.php/ICDAR_2005_Robust_Reading_Competitions
+http://www.iapr-tc11.org/mediawiki/index.php/ICDAR_2003_Robust_Reading_Competitions
+
+good : handwritted names : https://www.kaggle.com/datasets/landlord/handwriting-recognition?select=written_name_validation_v2.csv
+https://www.kaggle.com/general/221624
+https://paperswithcode.com/datasets?task=handwriting-recognition&page=1
+
+https://www.twine.net/blog/top-french-language-datasets/
+french wordx dataset :
+https://infoscience.epfl.ch/record/231987?ln=en
+https://www.semanticscholar.org/paper/A-Handwritten-French-Dataset-for-Word-Spotting:-Arvanitopoulos-Chevassus/fb1c0451b4674451aac2bc43db0936c9d8443fcd
+
+!!!!!!!!!!!!https://keras.io/examples/vision/handwriting_recognition/#prepare-tfdatadataset-objects
+
+étapes pour demain :
+- nouveau tuto keras : https://keras.io/examples/vision/handwriting_recognition
+- ajouter d'autres source de data
+    - http://www.iapr-tc11.org/mediawiki/index.php/ICDAR_2003_Robust_Reading_Competitions
+    - handwritten
+        - 657 writers contributed samples of their handwriting
+            1'539 pages of scanned text
+            5'685 isolated and labeled sentences
+            13'353 isolated and labeled text lines
+            115'320 isolated and labeled words
+    - https://tc11.cvc.uab.es/datasets/SVT_1 : trop de données autour des images
+    - https://www.kaggle.com/datasets/landlord/handwriting-recognition?select=written_name_validation_v2.csv : trop de données autour des noms
+    - https://paperswithcode.com/datasets?task=handwriting-recognition&page=1
+    - https://www.twine.net/blog/top-french-language-datasets/
+
+
+- bien entrainer le modèle, plusieurs heures si il le faut
+
+
+-- utiliser un générateur de phrase ????
+-- 2 dossiers :
+    1. EMNIST-Handwritten-French-words
+    2. EMNIST-Handwritten-French-Sentences
+    - avec un fichier texte à chaque fois à la racine de data pour référencer l'uuid de l'image et 
+    son label
+    - comme ça on le fait une fois avec plusieurs itérations puis on pourra ne plus le faire
+    - mettre une VARAIABLE_GLOBALE en haut du notebook, qui est un boolean pour savoir si on regéner ou pas
+    - METTRE UNE BARRE DE CHARGEMENT POUR VOIR l'avancée
+    
+    
+-- CHECKER LES GUILLEMETS, PARENTHESE, ETC... QUI NE SE METTENT PAS CORRECTEMENT
+-- faut il vrm mettre des 
+-- ON A EGALEMENT UN PROBL SUR LES EMNIST HANDWRITTEN : les LABELS NE SONT PAS BON, ON A QUE CERTAINS OU LES PREMIERS MOTS (voir vitrual dataset image 0 .png pour s'en rendre comtpe)
+
+-- changer le handwritten generated dataset pour qu'il ai de mots bien formés ? POur luio pparende réellement des mots réel de la langue frannçaise
+-- corriger majuscule dans iit5kword -> impossible, bcp trop long
+
+-- https://stackoverflow.com/questions/51113328/keras-high-loss-not-decreasing-with-each-epoch
+    --> peut être entrainer qu'avec les mots puis une fois dans l'API spliter l'image et faire deviner image par image
+        puis ajouter chaque string au final

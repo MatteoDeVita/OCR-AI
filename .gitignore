@@ -127,3 +127,31 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+wine_dataset/data
+ocr-machine-learning-research/CNN-OCR-MODEL/data
+API/__uploaded_files__/
+ocr-machine-learning-research/CNN-OCR-MODEL/data/
+dataset_download
+datasets/
+trainer/data
+data-generator/assets
+ocr-machine-learning-research/text_detector_using-EAST/*.png
+ocr-machine-learning-research/text_detector_using-EAST/*.jpg
+ocr-machine-learning-research/text_detector_using-EAST/*.jpeg
+data-generator/data
+
+
+# Exceptions
+!datasets/fonts/
+!datasets/fonts/text-detection/
+!datasets/fonts/wine_dataset/
+!datasets/fonts/wine_images/
+!datasets/fonts/howToDownloadCaptcha.txt/
+!datasets/fonts/vin_db.json/
+
+research-and-experimentations/MODEL-V4/data.txt
+research-and-experimentations/MODEL-V3/trainer/data/
+*.ckpt.index
+checkpoint
+cp-*
+trainer/data.txt

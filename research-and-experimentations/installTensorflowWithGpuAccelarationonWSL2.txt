@@ -1,0 +1,1 @@
+https://medium.com/@xizengmao/install-tensorflow-with-gpu-acceleration-simultaneously-for-windows-and-wsl-linux-2-10da088d5e4f
