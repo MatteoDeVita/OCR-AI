@@ -1,4 +1,4 @@
-# Concordino AI :
+# OCR AI :
 
 # This repository is cloned repository with added features to the API and the research section.
 # Please refer to the "research-and-experimentations" folder to see the research conducted
